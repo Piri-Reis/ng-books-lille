@@ -13,17 +13,37 @@ const routes: Routes = [
     component: HomepageComponent
   },
 
-  // Book List
+
+  // site.com/books
+  // site.com/books/42
+
+  // Books
   {
     path: "books",
-    component: BookIndexComponent
-  },
-
-  // Book Info
-  {
-    path: "book/:id", // site.com/book/42
-    component: BookReadComponent
+    children: [
+      {
+        path: '', //site.com/books
+        component: BookIndexComponent
+      },
+      {
+        path: ':id', // site.com/books/42
+        component: BookReadComponent
+      }
+    ]
   }
+
+
+  // // Book List
+  // {
+  //   path: "books",
+  //   component: BookIndexComponent
+  // },
+
+  // // Book Info
+  // {
+  //   path: "book/:id", // site.com/book/42
+  //   component: BookReadComponent
+  // }
 ];
 
 @NgModule({
