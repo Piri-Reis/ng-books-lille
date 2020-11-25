@@ -21,7 +21,7 @@ const routes: Routes = [
 
   // Book Info
   {
-    path: "book",
+    path: "book/:id", // site.com/book/42
     component: BookReadComponent
   }
 ];
